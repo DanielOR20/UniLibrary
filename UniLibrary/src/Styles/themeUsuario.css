@@ -1,0 +1,95 @@
+/* src/Styles/themeUsuario.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Paleta Stitch / UniLibrary */
+  --primary: #00346a;
+  --primary-container: #054a91;
+  --on-primary: #ffffff;
+  --secondary: #006a60;
+  --secondary-container: #86f2e2;
+  --tertiary: #680c37;
+  --background: #fbf9fa;
+  --surface: #fbf9fa;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f5f3f4;
+  --surface-container: #efedee;
+  --surface-container-high: #e9e8e9;
+  --surface-container-highest: #e3e2e3;
+  --on-surface: #1b1c1d;
+  --on-surface-variant: #424751;
+  
+  /* Variables Personalizadas Usuario */
+  --bg-primary-usuario: #0f172a;
+  --role-admin-usuario: #8b5cf6;
+  --role-user-usuario: #10b981;
+  --danger-usuario: #ef4444;
+  --border-usuario: rgba(0, 0, 0, 0.08);
+
+  /* Espaciados Stitch */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--on-surface);
+}
+
+.panel-container-usuario {
+  background-color: var(--background);
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.card-usuario {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--border-usuario);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.badge-usuario {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-admin-usuario {
+  background-color: var(--role-admin-usuario);
+  color: #fff;
+}
+
+.badge-user-usuario {
+  background-color: var(--role-user-usuario);
+  color: #fff;
+}
+
+.btn-usuario {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.btn-usuario:hover {
+  opacity: 0.9;
+}
+
+.btn-danger-usuario {
+  background-color: var(--danger-usuario);
+  color: #fff;
+}
