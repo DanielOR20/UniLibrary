@@ -7,7 +7,6 @@ export const AuthProviderUsuario = ({ children }) => {
   const [userUsuario, setUserUsuario] = useState(null);
   const [loadingUsuario, setLoadingUsuario] = useState(true);
 
-  // Recuperar sesión guardada al cargar la app
   useEffect(() => {
     const savedUser = localStorage.getItem('usuario_sesion');
     if (savedUser) {
@@ -16,12 +15,20 @@ export const AuthProviderUsuario = ({ children }) => {
     setLoadingUsuario(false);
   }, []);
 
-  // Función de Login contra JSON Server
   const loginUsuario = async (email, password) => {
     try {
+      // Limpiamos espacios accidentales del correo e insumos
+      const cleanEmail = email.trim().toLowerCase();
+      const cleanPassword = password.trim();
+
       const response = await fetch(
-        `http://localhost:3001/users?email=${email}&password=${password}`
+        `http://localhost:3001/users?email=${encodeURIComponent(cleanEmail)}&password=${encodeURIComponent(cleanPassword)}`
       );
+      
+      if (!response.ok) {
+        return { success: false, message: 'Error en la respuesta del servidor API' };
+      }
+
       const data = await response.json();
 
       if (data.length > 0) {
@@ -33,11 +40,10 @@ export const AuthProviderUsuario = ({ children }) => {
         return { success: false, message: 'Credenciales incorrectas' };
       }
     } catch (error) {
-      return { success: false, message: 'Error de conexión con el servidor' };
+      return { success: false, message: 'No se pudo conectar con el servidor backend (JSON Server)' };
     }
   };
 
-  // Función de Logout
   const logoutUsuario = () => {
     setUserUsuario(null);
     localStorage.removeItem('usuario_sesion');
