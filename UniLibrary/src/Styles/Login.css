@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
 :root {
   --background: #fbf9fa;
   --surface-container-low: #f5f3f4;
@@ -25,8 +27,28 @@ body {
   color: var(--on-surface);
 }
 
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
 .login-page {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +91,7 @@ body {
 /* Contenedor principal de la tarjeta de Login */
 .login-container {
   width: 100%;
-  max-width: 64rem;
+  max-width: 80rem;
   background-color: var(--surface-container-lowest);
   border-radius: 0.75rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -428,8 +450,11 @@ body {
 .input-icon {
   position: absolute;
   left: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
   color: var(--on-surface-variant);
   font-size: 1.125rem;
+  line-height: 1;
   pointer-events: none;
 }
 
@@ -466,8 +491,11 @@ select.login-input {
 .select-arrow {
   position: absolute;
   right: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
   color: var(--on-surface-variant);
   font-size: 1rem;
+  line-height: 1;
   pointer-events: none;
 }
 
@@ -483,6 +511,7 @@ select.login-input {
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .toggle-password-btn:hover {

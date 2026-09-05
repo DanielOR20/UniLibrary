@@ -1,4 +1,31 @@
+import Swal from "sweetalert2";
+
 function LoginForm() {
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get('user-identity')?.toString().trim();
+    const password = formData.get('user-password')?.toString();
+
+    if (!email || !password) {
+      Swal.fire({
+        icon: "error",
+        title: "Acceso denegado",
+        text: "Correo o contraseña incorrectos",
+        confirmButtonText: "Intentar de nuevo",
+      });
+      return;
+    }
+
+    Swal.fire({
+      icon: "success",
+      title: "¡Bienvenido!",
+      text: "Inicio de sesión exitoso",
+      confirmButtonText: "Continuar",
+    });
+  };
+
   return (
     <div className="login-container">
       {/* Panel Izquierdo: Información Institucional */}
@@ -66,7 +93,7 @@ function LoginForm() {
           </div>
         </div>
 
-        <form className="login-form">
+        <form className="login-form" onSubmit={handleLogin}>
           <div className="login-field">
             <label htmlFor="campus-select">Sede o Recinto Académico</label>
             <div className="input-wrapper">
@@ -91,6 +118,7 @@ function LoginForm() {
               <input 
                 type="text" 
                 id="user-identity" 
+                name="user-identity"
                 className="login-input" 
                 placeholder="ejemplo.estudiante@unilibrary.edu.cr" 
               />
@@ -107,6 +135,7 @@ function LoginForm() {
               <input 
                 type="password" 
                 id="user-password" 
+                name="user-password"
                 className="login-input" 
                 placeholder="••••••••••••" 
               />
@@ -144,7 +173,7 @@ function LoginForm() {
             </span>
           </div>
 
-          <button type="button" className="login-button primary-btn">
+          <button type="submit" className="login-button primary-btn">
             <span>Iniciar Sesión Institucional</span>
             <span className="material-symbols-outlined">arrow_forward</span>
           </button>
