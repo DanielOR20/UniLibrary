@@ -2,7 +2,7 @@
 
 ## 1. Alcance y organizacion
 
-Este documento separa el trabajo por rama a partir del estado revisado el 4 de septiembre de 2026. Se incluyen `Bryan`, `Angel`, `Daniel` y `Luis`, porque son las ramas que tienen trabajo identificable en las referencias del repositorio. 
+Este documento separa el trabajo por rama a partir del estado revisado el 4 de septiembre de 2026. Se incluyen `Bryan`, `Angel`, `Daniel`, `Luis` y `Krishna`, porque son las ramas que tienen trabajo identificable en las referencias del repositorio.
 
 Los commits compartidos se explican dentro de la rama donde se originan o donde tienen mayor relevancia. Por eso no se debe sumar el numero de commits de cada bloque como si fueran cambios totalmente independientes.
 
@@ -242,3 +242,21 @@ La referencia `origin/Luis` termina en `ee46cb7`. Esta rama contiene el trabajo 
 - **`package.json`** y **`package-lock.json`**: agregan o fijan dependencias, incluida la libreria de alertas en el commit final.
 
 La rama Luis se enfoca en presentacion y acceso. Su estructura de login no es la misma que la autenticacion de Angel ni que el dashboard administrativo de Bryan; son lineas que deben integrarse antes de tratarlas como un unico flujo.
+
+## 6. Informe de rama Krishna
+
+### Funcion de la rama
+
+La rama `Krishna` fue la rama integradora y de documentacion del proyecto. Su objetivo fue reunir el trabajo de las ramas existentes, resolver la integracion necesaria para que la pagina funcionara como una sola aplicacion y dejar registrado el aporte de cada integrante.
+
+### Commits principales de Krishna
+
+| Commit | Funcion |
+| --- | --- |
+| `a0a8f98` | Crea la documentacion tecnica del proyecto y describe el trabajo realizado por las ramas. |
+| `7edcb3b` | Integra la rama `Bryan` en `Krishna`, incorporando el panel administrativo. |
+| `625810e` | Une las ramas `Bryan` y `Luis` en la rama integradora para consolidar el panel, el login, los prototipos y los estilos. |
+
+### Resultado de la integracion
+
+Krishna consolida la base de React/Vite de Daniel, la autenticacion de Angel, el login y los recursos visuales de Luis y el panel administrativo de Bryan. Gracias a esta integracion, el proyecto queda reunido en una misma linea de trabajo y la pagina puede ejecutarse con sus principales vistas y componentes disponibles. La referencia `origin/main` apunta a la integracion de Krishna.
