@@ -1,0 +1,10 @@
+:root {
+  --color-primary: #054A91;       /* Steel Azure */
+  --color-secondary: #1B998B;     /* Verdigris */
+  --color-bg-light: #F4FAFF;      /* Alice Blue */
+  --color-accent: #912F56;        /* Vintage Berry */
+  --color-dark: #08090A;          /* Black Neutral */
+  --color-white: #FFFFFF;
+  --color-border: #E2EDF6;
+  --color-text-muted: #556270;
+}
