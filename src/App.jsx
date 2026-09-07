@@ -1,5 +1,13 @@
-import AdminDashboard from "./pages/AdminDashboard";
+import { RouterProvider } from "react-router-dom";
+
+import { router } from "./Routes/Routing";
+
+import { DashboardProvider } from "./Context/DashboardContext";
 
 export default function App() {
-  return <AdminDashboard />;
+  return (
+    <DashboardProvider>
+      <RouterProvider router={router} />
+    </DashboardProvider>
+  );
 }

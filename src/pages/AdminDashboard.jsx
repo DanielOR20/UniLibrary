@@ -1,6 +1,3 @@
-import { useState } from "react";
-
-import AdminLayout from "../Components/Layout/AdminLayout";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 import MetricGrid from "../components/dashboard/MetricGrid";
 import CriticalAlerts from "../components/dashboard/CriticalAlerts";
@@ -11,16 +8,10 @@ import SpacesSection from "../Components/Spaces/SpacesSection";
 import ProceduresPanel from "../Components/Procedures/ProceduresPanel";
 
 import NewLoanModal from "../Components/Loans/NewLoanModal";
-import Toast from "../Components/Ui/Toast";
 
-import {
-  DashboardProvider,
-  useDashboard,
-} from "../Context/DashboardContext";
+import { useDashboard } from "../Context/DashboardContext";
 
-function DashboardContent() {
-  const [globalSearch, setGlobalSearch] = useState("");
-
+export default function AdminDashboard() {
   const {
     setModalOpen,
     showToast,
@@ -41,18 +32,11 @@ function DashboardContent() {
   };
 
   return (
-    <AdminLayout
-      globalSearch={globalSearch}
-      onGlobalSearch={setGlobalSearch}
-      onNotify={() =>
-        showToast(
-          "Tienes 3 notificaciones pendientes.",
-          "notifications"
-        )
-      }
-    >
+    <>
       <DashboardHeader
-        onRegister={() => setModalOpen(true)}
+        onRegister={() =>
+          setModalOpen(true)
+        }
         onIdCard={handleIdCard}
         onReport={handleReport}
       />
@@ -76,16 +60,6 @@ function DashboardContent() {
       </div>
 
       <NewLoanModal />
-
-      <Toast />
-    </AdminLayout>
-  );
-}
-
-export default function AdminDashboard() {
-  return (
-    <DashboardProvider>
-      <DashboardContent />
-    </DashboardProvider>
+    </>
   );
 }

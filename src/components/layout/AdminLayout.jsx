@@ -1,29 +1,31 @@
 import { useState } from "react";
 
+import { Outlet } from "react-router-dom";
+
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 
-export default function AdminLayout({
-  children,
-  onGlobalSearch,
-  globalSearch,
-  onNotify,
-}) {
-  const [activeItem, setActiveItem] = useState(
-    "dashboard-general"
-  );
+import Toast from "../Ui/Toast";
 
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+import { useDashboard } from "../../Context/DashboardContext";
 
-  const handleNavigate = (id) => {
-    setActiveItem(id);
+export default function AdminLayout() {
+  const { showToast } =
+    useDashboard();
+
+  const [globalSearch, setGlobalSearch] =
+    useState("");
+
+  const [sidebarOpen, setSidebarOpen] =
+    useState(false);
+
+  const handleNavigate = () => {
     setSidebarOpen(false);
   };
 
   return (
     <div className="admin-shell">
       <Sidebar
-        activeItem={activeItem}
         onNavigate={handleNavigate}
         open={sidebarOpen}
       />
@@ -31,12 +33,17 @@ export default function AdminLayout({
       <div className="content-shell">
         <Topbar
           globalSearch={globalSearch}
-          onGlobalSearch={onGlobalSearch}
-          onNotify={onNotify}
+          onGlobalSearch={setGlobalSearch}
+          onNotify={() =>
+            showToast(
+              "Tienes 3 notificaciones pendientes.",
+              "notifications"
+            )
+          }
         />
 
         <main className="main-content">
-          {children}
+          <Outlet />
         </main>
       </div>
 
@@ -52,6 +59,8 @@ export default function AdminLayout({
           {sidebarOpen ? "close" : "menu"}
         </span>
       </button>
+
+      <Toast />
     </div>
   );
 }

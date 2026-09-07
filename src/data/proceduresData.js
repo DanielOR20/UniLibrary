@@ -36,3 +36,42 @@ export const procedures = [
     tone: "tertiary",
   },
 ];
+
+export const resolvedProcedures = [
+  {
+    id: 101,
+    title: "Paz y Salvo de Grado",
+    time: "Resuelto • 10:14 AM",
+    student: "Lucía Fernández G.",
+    card: "2018-ADM-0092",
+    description:
+      "Firma autorizada. Comprobante digital entregado al decanato.",
+    primaryAction: "Ver Comprobante",
+    secondaryAction: "Bitácora",
+  },
+
+  {
+    id: 102,
+    title: "Cambio de Filial / Traslado",
+    time: "Resuelto • 09:32 AM",
+    student: "Andrés Villalobos U.",
+    card: "2020-BIO-0144",
+    description:
+      "Traslado aprobado. Carné reimpreso con nueva sede asignada.",
+    primaryAction: "Ver Carné",
+    secondaryAction: "Bitácora",
+  },
+
+  {
+    id: 103,
+    title: "Convalidación de Créditos",
+    time: "Resuelto • Ayer",
+    student: "Paola Salazar M.",
+    card: "2019-INF-0771",
+    description:
+      "Convalidación validada por metadatos en repositorio institucional.",
+    primaryAction: "Ver Resolución",
+    secondaryAction: "Bitácora",
+    tone: "tertiary",
+  },
+];
