@@ -1,10 +1,10 @@
 import {
   procedures,
-} from "../../data/proceduresData";
+} from "../../Data/proceduresData";
 
 import {
   useDashboard,
-} from "../../context/DashboardContext";
+} from "../../Context/DashboardContext";
 
 import ProcedureCard from "./ProcedureCard";
 

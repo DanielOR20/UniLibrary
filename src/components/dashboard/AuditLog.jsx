@@ -1,4 +1,4 @@
-import { auditLog } from "../../data/dashboardData";
+import { auditLog } from "../../Data/dashboardData";
 
 export default function AuditLog() {
   return (

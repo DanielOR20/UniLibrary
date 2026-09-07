@@ -5,8 +5,8 @@ import {
   useState,
 } from "react";
 
-import { loans as initialLoans } from "../data/loansData";
-import { spaces as initialSpaces } from "../data/spacesData";
+import { loans as initialLoans } from "../Data/loansData";
+import { spaces as initialSpaces } from "../Data/spacesData";
 
 const DashboardContext = createContext(null);
 

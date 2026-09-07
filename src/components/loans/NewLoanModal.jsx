@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import Modal from "../ui/Modal";
+import Modal from "../Ui/Modal";
 
 import {
   useDashboard,
-} from "../../context/DashboardContext";
+} from "../../Context/DashboardContext";
 
 const initialForm = {
   cardNumber: "",

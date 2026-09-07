@@ -1,6 +1,6 @@
 import {
   useDashboard,
-} from "../../context/DashboardContext";
+} from "../../Context/DashboardContext";
 
 import SpaceCard from "./SpaceCard";
 import SpaceLegend from "./SpaceLegend";

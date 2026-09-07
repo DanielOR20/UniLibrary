@@ -1,6 +1,6 @@
-import { alerts } from "../../data/dashboardData";
+import { alerts } from "../../Data/dashboardData";
 
-import { useDashboard } from "../../context/DashboardContext";
+import { useDashboard } from "../../Context/DashboardContext";
 
 export default function CriticalAlerts() {
   const { showToast } =

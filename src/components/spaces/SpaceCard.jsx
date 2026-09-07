@@ -1,6 +1,6 @@
 import {
   useDashboard,
-} from "../../context/DashboardContext";
+} from "../../Context/DashboardContext";
 
 const statusLabels = {
   disponible: "Disponible",
@@ -94,7 +94,7 @@ export default function SpaceCard({
           }}
         >
           {statusLabels[status]}
-        </span>
+        </span> 
       </div>
 
       <div className="space-info">

@@ -1,4 +1,4 @@
-import { metrics } from "../../data/dashboardData";
+import { metrics } from "../../Data/dashboardData";
 
 import MetricCard from "./MetricCard";
 
