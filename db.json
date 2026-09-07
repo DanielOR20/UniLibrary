@@ -1,0 +1,95 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Ana Admin",
+      "email": "admin@demo.com",
+      "password": "1234",
+      "role": "admin",
+      "avatar": "https://ui-avatars.com/api/?name=Ana+Admin&background=8b5cf6&color=fff",
+      "studentCode": "ADM-2026-01",
+      "career": "Administración Académica",
+      "campus": "Campus Central",
+      "ponderado": 100,
+      "creditosAprobados": 120,
+      "creditosTotales": 120,
+      "asistencia": 100
+    },
+    {
+      "id": "2",
+      "name": "Sofía Valverde Jiménez",
+      "email": "user@demo.com",
+      "password": "1234",
+      "role": "user",
+      "avatar": "https://lh3.googleusercontent.com/aida/AEtjO1X6MP-Q7AuVLqW2owgOM6LAcNRaUKG8rnbS6HjXxmUNk4lcSx4zdy2BDmKHY5n3peCPLrmp0v7XJfWbc46GeLsTkHHHHK3g_DkOXPj7nAfmpm8KhkcM0HevqOnX30umy_X022DbKtlei2KSJpob2KlYe2OkzohjsywgkTYHTvL4I91NgYu3ndcLm93MObGaQhdl1Q53reINKAt9kiry4AGin1chf-XoMkiIUgPyeMiqSjzXlkD84soWK9TC",
+      "studentCode": "UL-2024-8841",
+      "career": "Lic. en Ingeniería en Sistemas de Información",
+      "campus": "Campus Central (Heredia)",
+      "ponderado": 93.8,
+      "creditosAprobados": 84,
+      "creditosTotales": 120,
+      "asistencia": 98
+    }
+  ],
+  "items": [
+    {
+      "id": "101",
+      "code": "SIS-402",
+      "title": "Arquitectura de Redes y Telecomunicaciones",
+      "professor": "Ing. Carlos Mora Delgado",
+      "classroom": "Aula 304 - Edificio STEM",
+      "schedule": "Lunes y Miércoles 18:00 - 20:30",
+      "type": "presencial",
+      "progress": 68,
+      "nextTask": "Laboratorio Subnetting IPv6",
+      "dueDate": "Viernes 23:59",
+      "ownerId": "2"
+    },
+    {
+      "id": "102",
+      "code": "SIS-405",
+      "title": "Algoritmos y Estructuras de Datos Avanzadas",
+      "professor": "Dra. Elena Solano Castro",
+      "classroom": "Laboratorio STEM 02",
+      "schedule": "Martes y Jueves 19:30 - 21:45",
+      "type": "presencial",
+      "progress": 74,
+      "nextTask": "Parcial II Árboles B+ y Grafos",
+      "dueDate": "12 Mar",
+      "ownerId": "2"
+    },
+    {
+      "id": "103",
+      "code": "BD-504",
+      "title": "Bases de Datos NoSQL y Cloud Computing",
+      "professor": "Ing. Marcela Vega Araya",
+      "classroom": "Moodle + AWS Educate",
+      "schedule": "Jueves 18:00 (Opcional)",
+      "type": "virtual",
+      "progress": 85,
+      "nextTask": "Entrega de Cluster MongoDB",
+      "dueDate": "18 Mar",
+      "ownerId": "2"
+    }
+  ],
+  "prestamos": [
+    {
+      "id": "201",
+      "cota": "QA-303.2-P48",
+      "title": "Computer Networks: A Systems Approach (6th Ed.)",
+      "author": "Larry L. Peterson & Bruce S. Davie",
+      "dueDate": "Jueves 28 Feb",
+      "urgent": true,
+      "ownerId": "2"
+    },
+    {
+      "id": "202",
+      "cota": "QA-76.76-C54",
+      "title": "Clean Architecture: A Craftsman's Guide",
+      "author": "Robert C. Martin",
+      "dueDate": "10 Marzo 2026",
+      "urgent": false,
+      "ownerId": "2"
+    }
+  ]
+}
