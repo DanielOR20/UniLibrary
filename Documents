@@ -1,0 +1,244 @@
+# Informe tecnico de UniLibrary por ramas
+
+## 1. Alcance y organizacion
+
+Este documento separa el trabajo por rama a partir del estado revisado el 4 de septiembre de 2026. Se incluyen `Bryan`, `Angel`, `Daniel` y `Luis`, porque son las ramas que tienen trabajo identificable en las referencias del repositorio. 
+
+Los commits compartidos se explican dentro de la rama donde se originan o donde tienen mayor relevancia. Por eso no se debe sumar el numero de commits de cada bloque como si fueran cambios totalmente independientes.
+
+## 2. Informe de rama Bryan
+
+### Estado y commits propios
+
+La rama actual es `Bryan` y termina en `0d781c5`. Su resultado principal es el panel administrativo de UniLibrary. Los commits distintivos de esta rama son:
+
+| Commit | Autor | Funcion |
+| --- | --- | --- |
+| `513f18d` | DanielOR20 | Base React/Vite compartida: configuracion, entrada, dependencias, estilos y recursos iniciales. |
+| `6089f49` | abolivarfwdcostarica-blip | Ajusta estilos iniciales y dependencias; tambien versiona `node_modules`, que deberia mantenerse fuera del repositorio. |
+| `cbc83c6` | abolivarfwdcostarica-blip | Cambio de transicion con mensaje poco descriptivo. |
+| `0d781c5` | abolivarfwdcostarica-blip | Completa la pagina y los paneles de administracion, incluyendo dashboard, prestamos, espacios, tramites, alertas, auditoria, datos y estilos. |
+
+La rama Bryan implementa un panel administrativo para una biblioteca universitaria. Permite consultar metricas, administrar prestamos, observar espacios, revisar tramites, consultar alertas y ver una bitacora. La mayor parte de la informacion es local y temporal: se carga desde archivos JavaScript y los cambios se pierden al recargar la pagina.
+
+### Archivos y funcionamiento de Bryan
+
+### 3. Archivos de configuracion y entrada
+
+- **`.gitignore`**: evita versionar dependencias, salidas de compilacion, logs y configuraciones locales.
+- **`package.json`**: define el proyecto como modulo ES y sus comandos `dev`, `build`, `lint` y `preview`. Usa React 19, React DOM, React Router DOM, Vite y ESLint. React Router esta instalado, pero no se usa en la aplicacion actual.
+- **`package-lock.json`**: fija las versiones concretas resueltas por npm para que las instalaciones sean reproducibles.
+- **`vite.config.js`**: configura Vite y activa el plugin de React para transformar JSX y permitir el desarrollo con recarga.
+- **`eslint.config.js`**: activa reglas recomendadas de ESLint, reglas de hooks de React y validacion de React Refresh; excluye `dist`.
+- **`index.html`**: documento HTML base. Define el idioma, metadatos, titulo, color de tema, el nodo `#root` y carga `src/main.jsx`.
+- **`src/main.jsx`**: punto de entrada. Crea el root de React, activa `StrictMode`, importa los estilos globales y renderiza `App`.
+- **`src/App.jsx`**: componente raiz actual; renderiza `AdminDashboard` directamente.
+- **`src/Routes/Routing.jsx`**: archivo reservado para rutas, actualmente vacio. No controla la navegacion.
+
+### 4. Flujo de la aplicacion
+
+1. El navegador carga `index.html`.
+2. `main.jsx` monta React y carga las hojas CSS.
+3. `App.jsx` muestra `AdminDashboard`.
+4. `AdminDashboard.jsx` envuelve la interfaz con `DashboardProvider`.
+5. El provider expone datos y acciones a los componentes mediante el contexto.
+6. `AdminLayout` organiza sidebar, topbar y contenido; las secciones renderizan el dashboard.
+7. Las acciones actualizan estado local y muestran un toast. No existe una API conectada en este flujo.
+
+### 5. Componentes del dashboard
+
+### `src/components/dashboard`
+
+- **`DashboardHeader.jsx`**: presenta el titulo del panel, contexto institucional y acciones principales.
+- **`QuickActions.jsx`**: ofrece accesos para registrar un prestamo, emitir un carnet y generar un reporte. En el estado actual estas acciones muestran feedback, pero no generan documentos ni conectan servicios externos.
+- **`MetricGrid.jsx`**: recorre la lista de metricas y crea una tarjeta para cada indicador.
+- **`MetricCard.jsx`**: muestra valor, etiqueta, icono, descripcion, pie y barra de progreso cuando corresponde. El porcentaje de aforo esta definido visualmente y no se calcula desde los espacios.
+- **`CriticalAlerts.jsx`**: lista alertas provenientes de datos estaticos y permite responder mediante mensajes temporales.
+- **`AuditLog.jsx`**: presenta registros de auditoria estaticos para que el administrador vea actividad reciente.
+
+### 6. Layout y navegacion visual
+
+### `src/components/layout`
+
+- **`AdminLayout.jsx`**: compone `Sidebar` y `Topbar`, conserva la opcion activa y controla la apertura del menu en pantallas pequeñas.
+- **`Sidebar.jsx`**: muestra marca, estado del sistema, periodo academico y menu lateral.
+- **`NavigationMenu.jsx`**: declara las ocho opciones de navegacion que aparecen en la sidebar. Cambiar la opcion actualiza la seleccion visual, pero no cambia de pagina mediante rutas.
+- **`Topbar.jsx`**: contiene busqueda global, notificaciones y acceso al perfil. La busqueda conserva texto, pero no filtra las secciones.
+- **`UserProfile.jsx`**: muestra datos estaticos de la administradora y su informacion de perfil.
+
+### 7. Prestamos
+
+### `src/components/loans`
+
+- **`LoansSection.jsx`**: coordina busqueda, filtro por estado, tabla y paginacion visual. Filtra los prestamos en memoria usando el contexto.
+- **`LoanSearch.jsx`**: campo para buscar por carnet, documento, recurso o codigo.
+- **`LoanFilters.jsx`**: selector de estado del prestamo.
+- **`LoansTable.jsx`**: renderiza encabezados, filas y estado vacio cuando no hay resultados.
+- **`LoanRow.jsx`**: muestra cada prestamo y las acciones disponibles segun su estado: aprobar, rechazar, entregar, inspeccionar o notificar.
+- **`NewLoanModal.jsx`**: formulario para crear un prestamo local. El registro creado usa el estudiante fijo `Nuevo usuario`, por lo que sirve como demostracion y no como alta conectada a usuarios reales.
+
+La paginacion se muestra en la interfaz, pero sus botones no cambian la pagina ni limitan los registros.
+
+### 8. Espacios y tramites
+
+### `src/components/spaces`
+
+- **`SpacesSection.jsx`**: recorre los espacios disponibles y agrega la leyenda de estados.
+- **`SpaceCard.jsx`**: presenta nombre, capacidad, ocupacion y estado. Permite asignar, liberar, poner en mantenimiento y reactivar mediante acciones del contexto.
+- **`SpaceLegend.jsx`**: explica visualmente los estados de los espacios.
+
+### `src/components/procedures`
+
+- **`ProceduresPanel.jsx`**: lista tramites pendientes y muestra el contador de nuevos tramites.
+- **`ProcedureCard.jsx`**: representa un tramite y sus acciones. Las acciones actualmente generan confirmaciones, sin persistencia ni procesamiento de expedientes.
+
+El contador visual indica 14 nuevos tramites, mientras los datos de demostracion contienen tres elementos.
+
+### 9. Componentes de interfaz reutilizables
+
+### `src/components/ui`
+
+- **`Badge.jsx`**: insignia reutilizable con tonos para estados y categorias.
+- **`Button.jsx`**: boton comun con soporte para icono y variantes de estilo.
+- **`Card.jsx`**: envoltorio generico para paneles.
+- **`Modal.jsx`**: ventana modal accesible con cierre por boton o clic en el exterior.
+- **`Toast.jsx`**: mensaje temporal para confirmar acciones o informar resultados.
+
+`Badge`, `Button` y `Card` existen como piezas reutilizables, aunque no tienen importaciones activas en el flujo principal revisado.
+
+### 10. Estado, datos y servicios
+
+### `src/context/DashboardContext.jsx`
+
+Es el centro de estado del dashboard. Inicializa prestamos y espacios, controla el modal de nuevo prestamo y administra el toast. Sus operaciones permiten aprobar, rechazar y entregar prestamos; crear registros; asignar, liberar, mantener y reactivar espacios. Usa estado React y `setTimeout` para ocultar avisos. Todo vive en memoria del navegador.
+
+### `src/data`
+
+- **`dashboardData.js`**: metricas, alertas y bitacora inicial.
+- **`loansData.js`**: tres prestamos de ejemplo.
+- **`proceduresData.js`**: tres tramites iniciales.
+- **`spacesData.js`**: seis espacios con capacidad, ocupacion, estado y detalles.
+
+Estos archivos funcionan como datos semilla para la demostracion, no como base de datos.
+
+### `src/services/dashboardService.js`
+
+Contiene funciones simuladas para obtener datos del dashboard y devolver un payload. No esta importado por el contexto ni por los componentes; representa una frontera preparada para una futura API.
+
+### 11. Estilos
+
+### `src/styles`
+
+- **`variables.css`**: variables de color, superficies, sombras, radios y dimensiones del layout.
+- **`global.css`**: reset, tipografia, iconos Material Symbols, controles basicos y scrollbar.
+- **`layout.css`**: sidebar fija, topbar, busqueda, perfil, contenido principal y adaptacion movil.
+- **`dashboard.css`**: estilos de cabecera, botones, metricas, paneles, tabla de prestamos, espacios, tramites, alertas, auditoria y paginacion.
+- **`components.css`**: estilos de modal, formularios y toast.
+- **`styles/docs/informes`**: archivo de informe solicitado; no participa en el bundle de la aplicacion.
+
+La tipografia y los iconos se cargan desde Google Fonts mediante `@import`, por lo que requieren conectividad externa durante la carga.
+
+### 12. Documentacion, prototipos y recursos
+
+- **`docs/stitch_portal_web_universitario_moderno/`**: prototipos HTML, capturas y `DESIGN.md` usados como referencia visual para el portal universitario y el panel.
+- **`public/favicon.svg`**: favicon de la aplicacion.
+- **`public/icons.svg`**: conjunto de iconos publico; no se observa uso directo en el flujo React actual.
+- **`src/assets/`**: recursos heredados del arranque de Vite, como `hero.png`, `react.svg` y `vite.svg`; no son parte necesaria del dashboard actual.
+- **`README.md`**: documentacion minima del panel administrativo.
+
+### 13. Limitaciones y siguientes necesidades tecnicas
+
+1. Conectar `dashboardService.js` a una API y persistir prestamos, espacios, tramites y auditoria.
+2. Integrar la autenticacion y las rutas protegidas de las ramas remotas con el dashboard administrativo.
+3. Implementar React Router o eliminar la dependencia si la navegacion seguira siendo una sola vista.
+4. Hacer funcional la busqueda global y la paginacion.
+5. Calcular metricas y aforo a partir de los datos reales, y sincronizar el contador de tramites.
+6. Agregar validacion de formularios, manejo de errores y pruebas automatizadas.
+7. Retirar `node_modules` del historial y mantener solo `package-lock.json` como artefacto generado por npm.
+8. Revisar la carga de fuentes externas para disponer de una experiencia estable sin conexion.
+
+### 14. Conclusion
+
+UniLibrary cuenta con una base visual y funcional solida para un panel de biblioteca: la interfaz esta separada por componentes, el estado se centraliza en un contexto y los estilos estan organizados por capas. El estado actual es principalmente un prototipo interactivo: las acciones del dashboard funcionan localmente, pero aun faltan persistencia, backend, rutas, autenticacion integrada y pruebas para considerarlo un sistema administrativo completo.
+
+## 3. Informe de rama Angel
+
+### Commits de Angel
+
+La referencia `origin/Angel` termina en `f8f4180` y parte de la base React creada por Daniel. Su objetivo es la autenticacion del usuario y el control de acceso por roles.
+
+| Commit | Funcion |
+| --- | --- |
+| `df51f98` | Crea el contexto de autenticacion, la ruta protegida, las pantallas de login, dashboard de usuario y acceso denegado, junto con un servicio API y datos de prueba. |
+| `f8f4180` | Agrega validacion de credenciales y conserva la sesion en almacenamiento local; actualiza las dependencias necesarias. |
+
+### Archivos de Angel
+
+- **`src/Context/AuthContextUsuario.jsx`**: administra usuario autenticado, credenciales, inicio/cierre de sesion y persistencia local de la sesion.
+- **`src/Routes/ProtectedRouteUsuario.jsx`**: impide que un usuario no autenticado o sin el rol requerido entre a una vista protegida.
+- **`src/Pages/LoginUsuario.jsx`**: pantalla de acceso de la linea de usuario.
+- **`src/Pages/DashboardUsuario.jsx`**: vista principal que se muestra despues de iniciar sesion.
+- **`src/Pages/AccessDeniedUsuario.jsx`**: pantalla para accesos rechazados por permisos.
+- **`src/Components/NavbarUsuario.jsx`**: navegacion visual del usuario autenticado.
+- **`src/Components/CardCursoUsuario.jsx`**: tarjeta reutilizable para representar informacion de cursos.
+- **`src/Services/apiUsuario.js`**: funciones preparadas para consultar o simular datos del usuario.
+- **`db.json`**: datos locales usados como fuente de prueba para la autenticacion o el contenido del usuario.
+- **`src/Styles/themeUsuario.css`**: tema visual de las pantallas de usuario.
+
+Esta rama no esta integrada con el `DashboardProvider` ni con el panel administrativo de Bryan. Representa un flujo paralelo de usuarios, por lo que se requeriria una integracion de rutas, roles y servicios antes de usar ambas partes como una sola aplicacion.
+
+## 4. Informe de rama Daniel
+
+### Commits de Daniel
+
+La referencia `origin/Daniel` termina en `513f18d`. Es la rama base del proyecto y contiene el arranque de React/Vite.
+
+| Commit | Funcion |
+| --- | --- |
+| `55f53f2` | Crea el repositorio y un README inicial. |
+| `513f18d` | Genera la estructura inicial de una aplicacion React con Vite, ESLint, dependencias, HTML de entrada, estilos y recursos graficos. |
+
+### Archivos de Daniel
+
+- **`package.json`**: declara React, React DOM, Vite y las herramientas de lint y desarrollo.
+- **`package-lock.json`**: fija las versiones instaladas.
+- **`vite.config.js`**: conecta Vite con el plugin de React.
+- **`eslint.config.js`**: define las reglas iniciales de calidad.
+- **`index.html`**: crea el documento base y el nodo donde React se monta.
+- **`src/main.jsx`**: inicia React y renderiza la aplicacion.
+- **`src/App.jsx`**: componente raiz de la plantilla inicial.
+- **`src/App.css`** y **`src/index.css`**: estilos iniciales generados para la plantilla.
+- **`src/assets/hero.png`**, **`react.svg`** y **`vite.svg`**: recursos de demostracion del arranque.
+- **`public/favicon.svg`** e **`icons.svg`**: recursos publicos iniciales.
+- **`README.md`** y **`.gitignore`**: descripcion minima del proyecto y exclusiones de Git.
+
+Daniel entrega la infraestructura, no el panel final. Bryan reutiliza esta base para construir el dashboard administrativo.
+
+## 5. Informe de rama Luis
+
+### Commits de Luis
+
+La referencia `origin/Luis` termina en `ee46cb7`. Esta rama contiene el trabajo de diseno, prototipos y login que precede o acompana a las otras lineas.
+
+| Commit | Funcion |
+| --- | --- |
+| `a70a5aa` | Agrega prototipos Stitch, capturas y el documento de diseno del portal universitario. |
+| `788476e` | Incorpora la base de Vite y los archivos iniciales de la aplicacion. |
+| `2b0fe6a` | Fusiona la estructura de Daniel con la linea de Luis. |
+| `1938604` | Reorganiza los prototipos Stitch dentro de `src/Stitch` y elimina la copia anterior ubicada en `docs`. |
+| `fdf2aff` | Agrega imagenes usadas por las pantallas y prototipos. |
+| `96b7d41` | Implementa una primera version de login y sus estilos. |
+| `506171b` | Corrige la duplicacion del login en `App.jsx`. |
+| `ee46cb7` | Corrige el login y agrega/configura `sweetalert2` para mensajes de interfaz. |
+
+### Archivos de Luis
+
+- **`src/Components/LoginForm.jsx`**: formulario reutilizable para capturar credenciales y disparar el acceso.
+- **`src/Pages/Login.jsx`**: pagina de login que compone la experiencia de entrada.
+- **`src/Styles/Login.css`**: estilos propios del formulario y la pagina de acceso.
+- **`src/Stitch/stitch_portal_web_universitario_moderno/`**: prototipos HTML, capturas y `DESIGN.md` que documentan propuestas visuales para portal, acceso, estudiante y administracion.
+- **`src/images/`**: imagenes de las propuestas visuales.
+- **`src/index.css`** y **`src/App.css`**: estilos globales y de la aplicacion durante la etapa de prototipo/login.
+- **`package.json`** y **`package-lock.json`**: agregan o fijan dependencias, incluida la libreria de alertas en el commit final.
+
+La rama Luis se enfoca en presentacion y acceso. Su estructura de login no es la misma que la autenticacion de Angel ni que el dashboard administrativo de Bryan; son lineas que deben integrarse antes de tratarlas como un unico flujo.
