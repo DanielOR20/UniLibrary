@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import db from "../../db.json";
 
 function LoginForm() {
   const handleLogin = (event) => {
@@ -18,10 +19,24 @@ function LoginForm() {
       return;
     }
 
+    const user = db.users.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (!user) {
+      Swal.fire({
+        icon: "error",
+        title: "Acceso denegado",
+        text: "Correo o contraseña incorrectos",
+        confirmButtonText: "Intentar de nuevo",
+      });
+      return;
+    }
+
     Swal.fire({
       icon: "success",
       title: "¡Bienvenido!",
-      text: "Inicio de sesión exitoso",
+      html: `<strong>${user.name}</strong><br/>Rol: ${user.role}`,
       confirmButtonText: "Continuar",
     });
   };

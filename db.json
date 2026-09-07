@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "estudiante@unilibrary.edu.cr",
+      "password": "Estudiante123",
+      "name": "Sofia Valverde Jimenez",
+      "role": "estudiante",
+      "carne": "UL-2024-8841",
+      "cedula": "1-1845-0923",
+      "campus": "san-pedro",
+      "carrera": "Lic. en Ingenieria en Sistemas de Informacion",
+      "estado": "Regular Activo",
+      "cuatrimestre": "I Cuatrimestre 2026"
+    },
+    {
+      "id": 2,
+      "email": "docente@unilibrary.edu.cr",
+      "password": "Docente456",
+      "name": "Carlos Mora Valverde",
+      "role": "docente",
+      "cedula": "1-2345-6789",
+      "campus": "heredia",
+      "departamento": "Ingenieria en Sistemas",
+      "estado": "Activo",
+      "cargo": "Profesor Titular"
+    },
+    {
+      "id": 3,
+      "email": "admin@unilibrary.edu.cr",
+      "password": "Admin789",
+      "name": "Maria Elena Rodriguez",
+      "role": "administrador",
+      "cedula": "1-3456-7890",
+      "campus": "virtual",
+      "departamento": "Tecnologia de la Informacion",
+      "estado": "Activo",
+      "cargo": "Coordinadora SIBI"
+    }
+  ]
+}
