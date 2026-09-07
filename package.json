@@ -12,7 +12,11 @@
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+<<<<<<< HEAD:package.json
     "react-router-dom": "^7.18.3"
+=======
+    "sweetalert2": "^11.26.25"
+>>>>>>> ee46cb70ee5e59fd3f66b6785b944f6eedc97ae8:UniLibrary/package.json
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
