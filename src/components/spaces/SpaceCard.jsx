@@ -1,6 +1,6 @@
 import {
   useDashboard,
-} from "../../Context/DashboardContext";
+} from "../../context/DashboardContext";
 
 const statusLabels = {
   disponible: "Disponible",

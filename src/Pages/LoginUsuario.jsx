@@ -1,7 +1,6 @@
-// src/Pages/LoginUsuario.jsx
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContextUsuario } from '../Context/AuthContextUsuario';
+import { AuthContextUsuario } from '../context/AuthContextUsuario';
 
 export const LoginUsuario = () => {
   const [emailUsuario, setEmailUsuario] = useState('');
@@ -21,7 +20,11 @@ export const LoginUsuario = () => {
     setCargando(false);
 
     if (res.success) {
-      navigate('/dashboard');
+      if (res.user?.role === 'admin') {
+        navigate('/admin');
+      } else {
+        navigate('/dashboard');
+      }
     } else {
       setErrorUsuario(res.message || 'Credenciales no válidas para el sistema.');
     }

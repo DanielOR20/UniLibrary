@@ -1,6 +1,6 @@
 import {
   useDashboard,
-} from "../../Context/DashboardContext";
+} from "../../context/DashboardContext";
 
 export default function Toast() {
   const { toast } =

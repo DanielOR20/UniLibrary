@@ -1,4 +1,4 @@
-import { useDashboard } from "../../Context/DashboardContext";
+import { useDashboard } from "../../context/DashboardContext";
 
 export default function LoanRow({
   loan,

@@ -1,7 +1,6 @@
-// src/Routes/ProtectedRouteUsuario.jsx
 import React, { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
-import { AuthContextUsuario } from '../Context/AuthContextUsuario';
+import { AuthContextUsuario } from '../context/AuthContextUsuario';
 
 export const ProtectedRouteUsuario = ({ children, allowedRoleUsuario }) => {
   const { isAuthenticatedUsuario, roleUsuario, loadingUsuario } = useContext(AuthContextUsuario);

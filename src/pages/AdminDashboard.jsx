@@ -1,22 +1,22 @@
 import { useState } from "react";
 
-import AdminLayout from "../Components/Layout/AdminLayout";
+import AdminLayout from "../components/layout/AdminLayout";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 import MetricGrid from "../components/dashboard/MetricGrid";
 import CriticalAlerts from "../components/dashboard/CriticalAlerts";
 import AuditLog from "../components/dashboard/AuditLog";
 
-import LoansSection from "../Components/Loans/LoansSection";
-import SpacesSection from "../Components/Spaces/SpacesSection";
-import ProceduresPanel from "../Components/Procedures/ProceduresPanel";
+import LoansSection from "../components/loans/LoansSection";
+import SpacesSection from "../components/spaces/SpacesSection";
+import ProceduresPanel from "../components/procedures/ProceduresPanel";
 
-import NewLoanModal from "../Components/Loans/NewLoanModal";
-import Toast from "../Components/Ui/Toast";
+import NewLoanModal from "../components/loans/NewLoanModal";
+import Toast from "../components/ui/Toast";
 
 import {
   DashboardProvider,
   useDashboard,
-} from "../Context/DashboardContext";
+} from "../context/DashboardContext";
 
 function DashboardContent() {
   const [globalSearch, setGlobalSearch] = useState("");

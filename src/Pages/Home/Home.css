@@ -1,0 +1,656 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f4faff;
+  color: #08090a;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  text-align: left;
+}
+
+/* 1. HERO SECTION */
+.hero-innovatec {
+  width: 100%;
+  position: relative;
+  background: 
+    linear-gradient(
+      135deg,
+      rgba(5, 74, 145, 0.92) 0%,
+      rgba(3, 45, 89, 0.88) 60%,
+      rgba(27, 153, 139, 0.75) 100%
+    ),
+    url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80') center/cover no-repeat;
+  color: #ffffff;
+  padding: 4.5rem 2rem 6.5rem;
+  border-bottom: 5px solid #1b998b;
+}
+
+.hero-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1b998b;
+  color: #ffffff;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.dot-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  line-height: 1.15;
+  font-weight: 800;
+  max-width: 800px;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 680px;
+  color: #e3edf8;
+  margin-bottom: 2rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-primary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1b998b;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.85rem 1.8rem;
+  border-radius: 8px;
+}
+
+.btn-secondary-action {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.85rem 1.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.hero-seals {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #b9d6f3;
+  font-weight: 600;
+}
+
+/* 2. ACCESOS RÁPIDOS */
+.quick-access-section {
+  max-width: 1200px;
+  margin: -3rem auto 3.5rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quick-card {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(8, 9, 10, 0.08);
+  border: 1px solid #e2edf6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quick-card h3 {
+  font-size: 1.15rem;
+  color: #054a91;
+  margin-bottom: 0.4rem;
+}
+
+.quick-card p {
+  font-size: 0.85rem;
+  color: #556270;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.quick-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1b998b;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* 3. CARRUSEL ESTILO FIDÉLITAS */
+.faculties-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4.5rem;
+  position: relative;
+}
+
+.section-title-wrap {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.section-title-wrap.centered {
+  text-align: center;
+}
+
+.section-eyebrow {
+  color: #912f56;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  display: block;
+}
+
+.section-title-wrap h2 {
+  font-size: 2.2rem;
+  color: #054a91;
+  margin: 0.4rem 0;
+}
+
+.section-title-wrap p {
+  color: #556270;
+}
+
+.carousel-relative-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Flechas limpias en los bordes */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #d0e0ed;
+  background-color: #ffffff;
+  color: #054a91;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 15;
+  transition: all 0.2s ease;
+}
+
+.btn-prev {
+  left: -20px;
+}
+
+.btn-next {
+  right: -20px;
+}
+
+.arrow-btn:hover {
+  background-color: #054a91;
+  color: #ffffff;
+}
+
+/* El recorte estricto del carrusel */
+.carousel-window {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.45s ease-in-out;
+  will-change: transform;
+}
+
+.carousel-slide-item {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 0 0.75rem;
+}
+
+@media (max-width: 992px) {
+  .carousel-slide-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-slide-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Tarjeta individual */
+.faculty-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e2edf6;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 4px 14px rgba(8, 9, 10, 0.05);
+}
+
+.faculty-img-wrap {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.faculty-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.faculty-img-wrap .faculty-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.badge-blue { background: #054a91; color: #ffffff; }
+.badge-berry { background: #912f56; color: #ffffff; }
+.badge-teal { background: #1b998b; color: #ffffff; }
+
+.faculty-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.faculty-card-body h3 {
+  font-size: 1.2rem;
+  color: #054a91;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.faculty-card-body p {
+  font-size: 0.85rem;
+  color: #556270;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.career-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+  flex: 1;
+}
+
+.career-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.35rem 0;
+  color: #08090a;
+  border-bottom: 1px dashed #e2edf6;
+}
+
+.check-svg {
+  color: #1b998b;
+  flex-shrink: 0;
+}
+
+.faculty-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #1b998b;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d4e2ee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dot.active {
+  width: 22px;
+  border-radius: 4px;
+  background-color: #1b998b;
+}
+
+/* 4. PROPUESTA STEM */
+.stem-section {
+  background: #ffffff;
+  padding: 5rem 1.5rem;
+  border-top: 1px solid #e2edf6;
+  border-bottom: 1px solid #e2edf6;
+}
+
+.stem-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .stem-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stem-image-col {
+  position: relative;
+}
+
+.stem-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.stem-floating-badge {
+  position: absolute;
+  bottom: -1rem;
+  right: 1.2rem;
+  background: #ffffff;
+  padding: 1.1rem 1.6rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-left: 5px solid #1b998b;
+  display: flex;
+  flex-direction: column;
+}
+
+.stem-floating-badge strong {
+  font-size: 1.8rem;
+  color: #054a91;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.pillar-item h4 {
+  font-size: 0.95rem;
+  color: #054a91;
+  margin-bottom: 0.3rem;
+}
+
+.pillar-item p {
+  font-size: 0.85rem;
+  color: #556270;
+  line-height: 1.4;
+}
+
+/* 5. VIDA UNIVERSITARIA */
+.campus-life-section {
+  padding: 5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.campus-life-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 850px) {
+  .campus-life-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.life-card {
+  background: #ffffff;
+  padding: 2.2rem;
+  border-radius: 12px;
+  border: 1px solid #e2edf6;
+}
+
+.life-card h3 {
+  font-size: 1.2rem;
+  color: #054a91;
+  margin-bottom: 0.5rem;
+}
+
+.life-card p {
+  font-size: 0.88rem;
+  color: #556270;
+  line-height: 1.5;
+}
+
+/* 6. MÉTRICAS */
+.metrics-banner {
+  background: #054a91;
+  color: #ffffff;
+  padding: 3.5rem 1.5rem;
+}
+
+.metrics-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.metric-box h2 {
+  font-size: 2.6rem;
+  color: #1b998b;
+  margin-bottom: 0.2rem;
+}
+
+.metric-box h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.metric-box p {
+  font-size: 0.8rem;
+  color: #c9def5;
+}
+
+/* 7. MODALIDADES */
+.modalities-section {
+  padding: 5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.modalities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 850px) {
+  .modalities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modality-card {
+  background: #ffffff;
+  padding: 2.2rem;
+  border-radius: 12px;
+  border: 1px solid #e2edf6;
+  position: relative;
+}
+
+.modality-card.featured {
+  border: 2px solid #1b998b;
+}
+
+.pop-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #912f56;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.modality-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.2rem;
+}
+
+.modality-card li {
+  font-size: 0.85rem;
+  color: #556270;
+  margin-bottom: 0.4rem;
+}
+
+/* 8. CTA FINAL */
+.final-cta {
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+  padding: 0 1.5rem;
+}
+
+.cta-box-inner {
+  background: linear-gradient(135deg, #054a91 0%, #912f56 100%);
+  color: #ffffff;
+  padding: 3.5rem 2rem;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.cta-chip {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.cta-box-inner h2 {
+  font-size: 2.3rem;
+  margin: 1rem 0 0.5rem;
+  color: #ffffff;
+}
+
+.cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-cta-white {
+  background: #ffffff;
+  color: #054a91;
+  padding: 0.75rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-cta-green {
+  background: #1b998b;
+  color: #ffffff;
+  padding: 0.75rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}

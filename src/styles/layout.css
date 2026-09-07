@@ -107,7 +107,7 @@
   flex: 0 0 auto;
 }
 
-.nav-menu {
+.sidebar .nav-menu {
   flex: 1;
 
   padding: 4px 8px;
@@ -197,7 +197,7 @@
   padding-left: var(--sidebar-width);
 }
 
-.topbar {
+.admin-shell .topbar {
   position: fixed;
 
   top: 0;
@@ -408,7 +408,7 @@
       translateX(0);
   }
 
-  .topbar {
+  .admin-shell .topbar {
     left: 0;
 
     padding: 0 14px;

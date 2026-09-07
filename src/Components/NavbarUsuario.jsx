@@ -1,6 +1,5 @@
-// src/Components/NavbarUsuario.jsx
 import React, { useContext } from 'react';
-import { AuthContextUsuario } from '../Context/AuthContextUsuario';
+import { AuthContextUsuario } from '../context/AuthContextUsuario';
 
 export const NavbarUsuario = ({ onAbrirModulo }) => {
   const { userUsuario, logoutUsuario } = useContext(AuthContextUsuario);

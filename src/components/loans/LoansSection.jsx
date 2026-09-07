@@ -5,7 +5,7 @@ import {
 
 import {
   useDashboard,
-} from "../../Context/DashboardContext";
+} from "../../context/DashboardContext";
 
 import LoanFilters from "./LoanFilters";
 import LoanSearch from "./LoanSearch";

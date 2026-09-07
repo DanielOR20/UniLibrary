@@ -1,9 +1,8 @@
-// src/Pages/DashboardUsuario.jsx
 import React, { useState, useEffect, useContext } from 'react';
-import { AuthContextUsuario } from '../Context/AuthContextUsuario';
-import { NavbarUsuario } from '../Components/NavbarUsuario';
-import { CardCursoUsuario } from '../Components/CardCursoUsuario';
-import { getRecursosUsuario, crearRecursoUsuario, eliminarRecursoUsuario } from '../Services/apiUsuario';
+import { AuthContextUsuario } from '../context/AuthContextUsuario';
+import { NavbarUsuario } from '../components/NavbarUsuario';
+import { CardCursoUsuario } from '../components/CardCursoUsuario';
+import { getRecursosUsuario, crearRecursoUsuario, eliminarRecursoUsuario } from '../services/apiUsuario';
 
 export const DashboardUsuario = () => {
   const { userUsuario } = useContext(AuthContextUsuario);
