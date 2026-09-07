@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-error": "#ffffff",
+          "on-primary": "#ffffff",
+          "surface-container": "#efedee",
+          "background": "#fbf9fa",
+          "on-primary-fixed-variant": "#00468b",
+          "surface-container-high": "#e9e8e9",
+          "tertiary-container": "#86264d",
+          "surface-container-lowest": "#ffffff",
+          "secondary-fixed": "#89f5e5",
+          "on-error-container": "#93000a",
+          "on-tertiary-fixed": "#3e001d",
+          "surface-container-low": "#f5f3f4",
+          "primary-fixed": "#d6e3ff",
+          "surface-bright": "#fbf9fa",
+          "tertiary": "#680c37",
+          "primary-container": "#054a91",
+          "surface-tint": "#285ea6",
+          "on-secondary-container": "#006f64",
+          "on-primary-container": "#95bcff",
+          "on-background": "#1b1c1d",
+          "on-tertiary-fixed-variant": "#812249",
+          "surface": "#fbf9fa",
+          "secondary": "#006a60",
+          "outline-variant": "#c2c6d2",
+          "on-primary-fixed": "#001b3d",
+          "inverse-on-surface": "#f2f0f1",
+          "on-tertiary": "#ffffff",
+          "secondary-fixed-dim": "#6bd8c9",
+          "outline": "#737782",
+          "surface-variant": "#e3e2e3",
+          "tertiary-fixed-dim": "#ffb1c8",
+          "on-secondary-fixed-variant": "#005048",
+          "primary-fixed-dim": "#a9c7ff",
+          "inverse-primary": "#a9c7ff",
+          "surface-container-highest": "#e3e2e3",
+          "inverse-surface": "#303032",
+          "tertiary-fixed": "#ffd9e2",
+          "primary": "#00346a",
+          "on-secondary": "#ffffff",
+          "on-secondary-fixed": "#00201c",
+          "secondary-container": "#86f2e2",
+          "surface-dim": "#dbd9db",
+          "on-surface": "#1b1c1d",
+          "on-tertiary-container": "#ff9fbd",
+          "error": "#ba1a1a",
+          "on-surface-variant": "#424751",
+          "error-container": "#ffdad6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-mobile": "1rem",
+          "space-xs": "0.5rem",
+          "space-2xl": "3rem",
+          "space-lg": "1.5rem",
+          "gutter-desktop": "1.5rem",
+          "space-3xl": "4rem",
+          "space-xl": "2rem",
+          "space-2xs": "0.25rem",
+          "space-md": "1rem",
+          "gutter-mobile": "1rem",
+          "space-sm": "0.75rem",
+          "margin-desktop": "3rem",
+          "margin-tablet": "2rem"
+        },
+        "fontFamily": {
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "display-lg-mobile": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "title-md": [
+            "Inter"
+          ],
+          "display-lg": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-lg": [
+            "2rem",
+            {
+              "lineHeight": "2.5rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "0.875rem",
+            {
+              "lineHeight": "1.25rem",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "1.125rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg-mobile": [
+            "1.5rem",
+            {
+              "lineHeight": "2rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "1.5rem",
+            {
+              "lineHeight": "2rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg-mobile": [
+            "2.25rem",
+            {
+              "lineHeight": "2.75rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "0.875rem",
+            {
+              "lineHeight": "1.25rem",
+              "letterSpacing": "0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-sm": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "letterSpacing": "0.03em",
+              "fontWeight": "600"
+            }
+          ],
+          "title-md": [
+            "1.125rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg": [
+            "3.5rem",
+            {
+              "lineHeight": "4rem",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><img alt="Logo for UniLibrary featuring a modern university academic book, digital knowledge nodes, clean vector branding with colors #054A91 and #1B998B. Brand logo. - Primary color: #054a91
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V1-lmLuNXaUpNNjKeaz19QjQw5eM9Da6UOGL7td7wiBLb1YlWZF8gDXMOevmtlOmKejnLVhZ6qRDG2ItOYgXRU6BgIATqniHsOT_U1lhvHcASppeKRVq9CHF_zxulu0cfWvhlix8NXt88lsBQACY6IDGuDsyCh7oAJROlLHv35hP0c9znnB0eBonRZ5FYblVx6mte0qFhVTTLlVoWXIuNhE26SRSsUO_d8NEhGguojnqjekgTuxVh0rqgL"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary tracking-tight leading-none">UniLibrary</span><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider mt-1">Gestión Académica</span></div></div><div class="px-space-md py-space-xs"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded-lg"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-secondary font-medium truncate">Portal Administrativo &amp; Gestión</span></div></div><nav class="flex-1 px-space-sm py-space-xs flex flex-col gap-space-2xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors bg-primary-container text-on-primary font-semibold shadow-sm" data-path="dashboard-general" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard General</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="gestion-de-prestamos" href="#"><span class="material-symbols-outlined text-[20px]">assignment_return</span><span>Gestión de Préstamos</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="catalogo-y-recursos" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span>Catálogo &amp; Recursos</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="usuarios-y-carnes" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Usuarios &amp; Carnés</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="aforo-y-espacios-stem" href="#"><span class="material-symbols-outlined text-[20px]">meeting_room</span><span>Aforo &amp; Espacios STEM</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="mesa-de-tramites" href="#"><span class="material-symbols-outlined text-[20px]">inbox</span><span>Mesa de Trámites</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="reportes-y-analitica" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span>Reportes &amp; Analítica</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Configuración</span></a></nav><div class="p-space-sm bg-surface-container-low mx-space-sm mb-space-sm rounded-lg"><div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">verified</span><span>Sistema v2.4 Activo</span></div><p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Período Académico 2024-II</p></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex-1 max-w-xl"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-3 text-outline text-[20px] pointer-events-none">search</span><input class="w-full bg-surface-container-lowest pl-10 pr-space-md py-2 rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Buscar usuario, carné, libro, reporte, aula..." type="text"/></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X6MP-Q7AuVLqW2owgOM6LAcNRaUKG8rnbS6HjXxmUNk4lcSx4zdy2BDmKHY5n3peCPLrmp0v7XJfWbc46GeLsTkHHHHK3g_DkOXPj7nAfmpm8KhkcM0HevqOnX30umy_X022DbKtlei2KSJpob2KlYe2OkzohjsywgkTYHTvL4I91NgYu3ndcLm93MObGaQhdl1Q53reINKAt9kiry4AGin1chf-XoMkiIUgPyeMiqSjzXlkD84soWK9TC"/><div class="hidden xl:flex flex-col text-left leading-none"><span class="font-label-md text-label-md text-on-surface font-semibold">Licda. Marcela Solís</span><span class="font-label-sm text-label-sm text-outline mt-0.5">Administradora de Sistema</span></div></div></div></header><main class="relative w-full pt-16 bg-background px-gutter-desktop pb-space-2xl min-h-screen"><div class="flex flex-col w-full">
+<div class="relative w-full rounded-xl p-space-lg mb-space-lg bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-primary/5 pointer-events-none blur-2xl"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold tracking-wide uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            SIBI v2.4 • Producción
+          </span>
+<span class="text-outline font-label-sm text-label-sm">•</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">apartment</span>
+            Campus Central &amp; Red Remota SIBI (14 Sedes)
+          </span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight font-bold">Consola de Gestión Administrativa &amp; Operaciones SIBI</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Supervisión en tiempo real de circulación bibliográfica, aforo de recintos STEM y resoluciones de trámites de paz y salvo.</p>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold transition-all shadow-sm active:scale-95" id="btnRegistrarPrestamo">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Registrar Préstamo</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container text-primary font-label-md text-label-md font-semibold transition-all active:scale-95" id="btnEmitirCarne">
+<span class="material-symbols-outlined text-[18px] text-secondary">badge</span>
+<span>Emitir Carné</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-colors" id="btnReportePdf">
+<span class="material-symbols-outlined text-[18px] text-tertiary">picture_as_pdf</span>
+<span>Generar Reporte PDF</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-outline uppercase tracking-wider font-label-sm text-label-sm font-semibold">Circulación Fisiológica</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">1,482</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Libros físicos en préstamo activo</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">book</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between border-t border-surface-container">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +12% vs mes anterior
+        </span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium bg-tertiary/10 px-2 py-0.5 rounded-full">18 hoy pendientes</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-outline uppercase tracking-wider font-label-sm text-label-sm font-semibold">Aforo Global &amp; STEM</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">78%</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">420 concurrentes en 14 sedes</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs">
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-2 rounded-full transition-all duration-500" style="width: 78%"></div>
+</div>
+<div class="flex justify-between items-center mt-1.5 font-label-sm text-label-sm text-outline">
+<span>Capacidad nominal: 540 plazas</span>
+<span class="text-secondary font-semibold">120 libres</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-outline uppercase tracking-wider font-label-sm text-label-sm font-semibold">Mesa de Trámites</span>
+<h3 class="font-headline-sm text-headline-sm text-tertiary font-bold mt-1">14</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Expedientes en cola de dictamen</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant">6 Paz y Salvo • 8 Prórrogas</span>
+<span class="font-label-sm text-label-sm font-semibold text-tertiary hover:underline cursor-pointer">Revisar cola →</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-outline uppercase tracking-wider font-label-sm text-label-sm font-semibold">Bases Digitales &amp; Repositorios</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mt-1">98.4%</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SLA IEEE, ScienceDirect &amp; ACM</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">cloud_done</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between border-t border-surface-container">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Proxies Shiro Activos
+        </div>
+<span class="font-label-sm text-label-sm text-outline">18.4k accesos/mes</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md pb-space-xs border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">swap_horizontal_circle</span>
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Gestión de Préstamos Rápidos &amp; Reservas</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Filtrar:</span>
+<select class="bg-surface-container-low text-on-surface font-label-sm text-label-sm px-2.5 py-1 rounded-lg border-none focus:ring-1 focus:ring-primary outline-none" id="filtroPrestamos">
+<option value="todos">Todos los Estados</option>
+<option value="pendiente">Pendientes de Aprobación</option>
+<option value="listo">Listos para Entrega</option>
+</select>
+</div>
+</div>
+<div class="relative mb-space-md">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">badge</span>
+<input class="w-full pl-10 pr-28 py-2.5 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 shadow-inner" id="searchPrestamoInput" placeholder="Búsqueda rápida por Carné (ej. 2024-ING-0482) o Cédula de Identidad..." type="text"/>
+<button class="absolute right-1.5 px-space-sm py-1.5 bg-primary text-on-primary rounded font-label-sm text-label-sm font-medium hover:bg-primary-container transition-colors" id="btnEjecutarBusqueda">
+              Buscar Carné
+            </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-3 rounded-l-lg">Estudiante / Carné</th>
+<th class="py-2.5 px-3">Recurso Solicitado</th>
+<th class="py-2.5 px-3">Cota / Código</th>
+<th class="py-2.5 px-3">Solicitud</th>
+<th class="py-2.5 px-3">Estado</th>
+<th class="py-2.5 px-3 text-right rounded-r-lg">Acción Inmediata</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y divide-surface-container" id="prestamosTableBody">
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Elena Gómez R.</span>
+<span class="font-label-sm text-label-sm text-primary font-mono font-medium">2022-ING-1094</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col max-w-xs">
+<span class="font-medium text-on-surface truncate">Cálculo Vectorial y Multivariable (Stewart, 8va Ed.)</span>
+<span class="text-outline font-label-sm text-label-sm">Ejemplar Físico • Sala de Reserva</span>
+</div>
+</td>
+<td class="py-3 px-3 font-mono font-label-sm text-label-sm text-on-surface-variant">QA-303.2-S74</td>
+<td class="py-3 px-3 text-on-surface-variant font-label-sm text-label-sm">Hoy, 09:15 AM</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-primary/10 text-primary font-semibold">Pendiente</span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-secondary/10 text-secondary transition-colors" title="Aprobar y Asignar">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error/10 text-error transition-colors" title="Rechazar con Nota">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" title="Notificar por Correo">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Mateo Morales D.</span>
+<span class="font-label-sm text-label-sm text-primary font-mono font-medium">2021-MED-0341</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col max-w-xs">
+<span class="font-medium text-on-surface truncate">Principios de Bioquímica (Lehninger, 7ma Ed.)</span>
+<span class="text-outline font-label-sm text-label-sm">Colección General • 7 Días</span>
+</div>
+</td>
+<td class="py-3 px-3 font-mono font-label-sm text-label-sm text-on-surface-variant">QD-415-L44</td>
+<td class="py-3 px-3 text-on-surface-variant font-label-sm text-label-sm">Hoy, 08:42 AM</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary/15 text-secondary font-semibold">Listo Recojo</span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold hover:bg-secondary/90 transition-colors" title="Confirmar Entrega Física">
+                      Entregar
+                    </button>
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-outline" title="Rechazar">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Valeria Castillo F.</span>
+<span class="font-label-sm text-label-sm text-primary font-mono font-medium">2023-ARQ-0819</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col max-w-xs">
+<span class="font-medium text-on-surface truncate">Historia de la Arquitectura Moderna (Frampton)</span>
+<span class="text-outline font-label-sm text-label-sm">Colección Referencial Especial</span>
+</div>
+</td>
+<td class="py-3 px-3 font-mono font-label-sm text-label-sm text-on-surface-variant">NA-680-F72</td>
+<td class="py-3 px-3 text-on-surface-variant font-label-sm text-label-sm">Ayer, 18:30 PM</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary/10 text-tertiary font-semibold">Retenido / Mora</span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium hover:bg-surface-container transition-colors" title="Ver Detalle de Bloqueo">
+                      Inspeccionar
+                    </button>
+<button class="p-1.5 rounded-md hover:bg-tertiary/10 text-tertiary" title="Notificar Multa">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs border-t border-surface-container font-label-sm text-label-sm text-outline">
+<span>Mostrando 3 de 28 solicitudes activas</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface disabled:opacity-40" disabled="">← Previo</button>
+<button class="px-2 py-1 rounded bg-primary text-on-primary">1</button>
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface">2</button>
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface">Siguiente →</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-md pb-space-xs border-b border-surface-container">
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">meeting_room</span>
+              Supervisión de Espacios STEM &amp; Cubículos de Estudio
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Monitoreo de telemetría y llaves electrónicas por recinto.</p>
+</div>
+<div class="flex items-center gap-3 font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Disponible</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> Ocupado</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-outline"></span> Mantenimiento</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-space-sm">
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col justify-between hover:shadow transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Cubículo 01 (Colaborativo)</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold bg-tertiary/10 px-1.5 py-0.5 rounded">Ocupado</span>
+</div>
+<div class="my-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="text-on-surface font-medium">Grupo Investigación Robótica</div>
+<div class="text-outline">Hasta: 11:30 AM (Restan 45m)</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container">
+<span class="text-outline font-label-sm text-label-sm">Capacidad: 6 pers.</span>
+<button class="text-secondary hover:underline font-label-sm text-label-sm font-semibold" onclick="liberarEspacio(this, 'Cubículo 01')">Liberar Espacio</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col justify-between hover:shadow transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Cubículo 02 (Silencioso)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary/15 px-1.5 py-0.5 rounded">Disponible</span>
+</div>
+<div class="my-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="text-outline">Sin reserva activa</div>
+<div class="text-outline">Última higienización: 08:00 AM</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container">
+<span class="text-outline font-label-sm text-label-sm">Capacidad: 4 pers.</span>
+<button class="text-primary hover:underline font-label-sm text-label-sm font-semibold" onclick="asignarEspacio(this, 'Cubículo 02')">Asignar Ahora</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col justify-between hover:shadow transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Laboratorio STEM 01</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold bg-tertiary/10 px-1.5 py-0.5 rounded">Ocupado</span>
+</div>
+<div class="my-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="text-on-surface font-medium">Dr. Hernán Bravo • Tesis IA</div>
+<div class="text-outline">18 Estaciones GPU activas</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container">
+<span class="text-outline font-label-sm text-label-sm">Capacidad: 24 pers.</span>
+<button class="text-outline hover:text-on-surface font-label-sm text-label-sm" onclick="bloquearMantenimiento(this, 'Laboratorio STEM 01')">Mantenimiento</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col justify-between hover:shadow transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Laboratorio STEM 02</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary/15 px-1.5 py-0.5 rounded">Disponible</span>
+</div>
+<div class="my-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="text-outline">Impresoras 3D calibradas</div>
+<div class="text-secondary font-medium">Próxima reserva: 14:00 PM</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container">
+<span class="text-outline font-label-sm text-label-sm">Capacidad: 20 pers.</span>
+<button class="text-primary hover:underline font-label-sm text-label-sm font-semibold" onclick="asignarEspacio(this, 'Laboratorio STEM 02')">Asignar Ahora</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col justify-between hover:shadow transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Sala VR &amp; Simulación 3D</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold bg-tertiary/10 px-1.5 py-0.5 rounded">Ocupado</span>
+</div>
+<div class="my-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="text-on-surface font-medium">Cátedra Anatomía Humana VR</div>
+<div class="text-outline">8 Cascos Meta Quest Pro en uso</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container">
+<span class="text-outline font-label-sm text-label-sm">Capacidad: 12 pers.</span>
+<button class="text-secondary hover:underline font-label-sm text-label-sm font-semibold" onclick="liberarEspacio(this, 'Sala VR')">Liberar Espacio</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col justify-between hover:shadow transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Cubículo 06 (Acústico)</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-semibold bg-surface-container px-1.5 py-0.5 rounded">Mantenimiento</span>
+</div>
+<div class="my-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="text-on-surface font-medium">Reemplazo Panel Acústico</div>
+<div class="text-outline">Orden Técnica #ST-8821</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container">
+<span class="text-outline font-label-sm text-label-sm">Capacidad: 4 pers.</span>
+<button class="text-secondary hover:underline font-label-sm text-label-sm font-semibold" onclick="habilitarEspacio(this, 'Cubículo 06')">Reactivar</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[22px]">fact_check</span>
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Mesa de Trámites</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-tertiary/10 text-tertiary font-bold rounded-full">14 Nuevos</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Expedientes estudiantiles pendientes de resolución oficial.</p>
+<div class="flex flex-col gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary">Paz y Salvo de Grado</span>
+<span class="font-label-sm text-label-sm text-outline">Hace 22 min</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-semibold text-on-surface">Sebastián R. Almonte</span>
+<span class="font-mono text-outline font-label-sm text-label-sm">2019-MED-0112</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Sin adeudos en colecciones ni multas pendientes.</p>
+<div class="flex items-center justify-end gap-2 mt-1">
+<button class="px-2.5 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold hover:bg-secondary/90">Aprobar Firma</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Expediente</button>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary">Convalidación de Tesis Digital</span>
+<span class="font-label-sm text-label-sm text-outline">Hace 1 h</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-semibold text-on-surface">Camila Torres V.</span>
+<span class="font-mono text-outline font-label-sm text-label-sm">2020-INF-0943</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Metadatos Dublin Core cargados en repositorio institucional.</p>
+<div class="flex items-center justify-end gap-2 mt-1">
+<button class="px-2.5 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold hover:bg-secondary/90">Validar Depósito</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Revisar PDF</button>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1.5 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-tertiary">Prórroga Extraordinaria</span>
+<span class="font-label-sm text-label-sm text-outline">Ayer</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-semibold text-on-surface">Gabriel Peña H.</span>
+<span class="font-mono text-outline font-label-sm text-label-sm">2021-DIR-0078</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Solicitud por convalecencia médica (3 libros jurídicos).</p>
+<div class="flex items-center justify-end gap-2 mt-1">
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold hover:bg-primary-container">Autorizar +10 Días</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Comprobante</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[22px]">crisis_alert</span>
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Alertas Críticas &amp; Moras</h2>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-ping"></span>
+</div>
+<div class="space-y-space-xs">
+<div class="p-space-xs rounded-lg bg-tertiary/5 border-l-4 border-tertiary flex gap-space-xs items-start">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">lock_person</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-tertiary">Carné Suspendido: Mora &gt; 15 Días</span>
+<p class="font-label-sm text-label-sm text-on-surface">Julián Ortega (2022-ECO-0312) mantiene Atlas de Econometría con vencimiento al 12-Oct.</p>
+<div class="mt-1 flex items-center gap-2">
+<button class="text-tertiary underline font-label-sm text-label-sm font-semibold">Generar Multa Automática</button>
+<span class="text-outline">•</span>
+<button class="text-outline hover:text-on-surface font-label-sm text-label-sm">Contactar Decanatura</button>
+</div>
+</div>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low border-l-4 border-primary flex gap-space-xs items-start">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">router</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-primary">Gateway RFID Puerta Norte Sede Central</span>
+<p class="font-label-sm text-label-sm text-on-surface">Pérdida de paquetes 1.2%. Antena 2 requiere calibración de sensibilidad antirrobo.</p>
+<span class="font-label-sm text-label-sm text-outline mt-0.5">Ingeniería Telemática asignada • Ticket #TEL-409</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]">history</span>
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Bitácora de Auditoría SIBI</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-mono font-medium">EN VIVO</span>
+</div>
+<ul class="space-y-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 shrink-0"></span>
+<div>
+<span class="font-semibold text-on-surface">Bibliotecario R. Mendoza</span> procesó devolución de 4 ejemplares físicos en Ventanilla 2.
+              <span class="block text-outline text-[11px] font-mono">10:14 AM • Estación WS-04</span>
+</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+<div>
+<span class="font-semibold text-on-surface">Coord. M. Solís</span> renovó carné de posgrado a <span class="font-mono text-primary">2024-DOC-0021</span> con acceso extendido.
+              <span class="block text-outline text-[11px] font-mono">10:02 AM • Panel Central</span>
+</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mt-1.5 shrink-0"></span>
+<div>
+<span class="font-semibold text-on-surface">Sistema Automático</span> emitió recordatorio por SMS/Correo a 18 usuarios con entrega hoy.
+              <span class="block text-outline text-[11px] font-mono">09:45 AM • CronJob SIBI-Core</span>
+</div>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-outline mt-1.5 shrink-0"></span>
+<div>
+<span class="font-semibold text-on-surface">Soporte Red</span> sincronizó catálogo de metadatos MARC21 con la Red Nacional Universitaria.
+              <span class="block text-outline text-[11px] font-mono">09:00 AM • Servidor OAI-PMH</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 hidden bg-on-background/50 backdrop-blur-sm flex items-center justify-center p-4" id="modalNuevoPrestamo">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-lg shadow-xl relative animate-in fade-in zoom-in duration-200">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<h3 class="font-title-md text-title-md font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[24px]">assignment_add</span>
+          Registro Rápido de Préstamo
+        </h3>
+<button class="p-1 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container" id="btnCerrarModal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="mt-space-md flex flex-col gap-space-sm" id="formPrestamo" onsubmit="event.preventDefault(); confirmarNuevoPrestamo();">
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Carné Universitario o Documento</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Ej: 2024-ING-8831" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Código de Barras / Cota del Ejemplar</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none font-mono" placeholder="Escanee o ingrese cota MARC21..." required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Tipo de Préstamo</label>
+<select class="w-full px-3 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none">
+<option>Circulación Regular (7 días)</option>
+<option>Préstamo en Sala (Mismo día)</option>
+<option>Docente Investigador (30 días)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Sede de Entrega</label>
+<select class="w-full px-3 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none">
+<option>Sede Central - Mostrador 1</option>
+<option>Biblioteca Ciencias Médicas</option>
+<option>Campus Tecnológico Norte</option>
+</select>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-end gap-space-xs pt-space-xs border-t border-surface-container">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium" id="btnCancelarPrestamo" type="button">Cancelar</button>
+<button class="px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all" type="submit">Registrar Préstamo</button>
+</div>
+</form>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-50 hidden bg-inverse-surface text-inverse-on-surface px-space-md py- space-sm rounded-lg shadow-xl items-center gap-2 font-body-sm text-body-sm transition-opacity duration-300" id="toastNotif">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]" id="toastIcon">check_circle</span>
+<span id="toastMessage">Operación efectuada con éxito.</span>
+</div>
+</div>
+<script>
+  function mostrarToast(mensaje, icon = 'check_circle') {
+    const toast = document.getElementById('toastNotif');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = mensaje;
+    toastIcon.textContent = icon;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 3500);
+  }
+
+  function liberarEspacio(btn, espacio) {
+    const card = btn.closest('.bg-surface-container-low');
+    if (!card) return;
+    const badge = card.querySelector('span.font-label-sm.font-semibold');
+    const dot = card.querySelector('span.rounded-full');
+    if (badge) {
+      badge.textContent = 'Disponible';
+      badge.className = 'font-label-sm text-label-sm text-secondary font-semibold bg-secondary/15 px-1.5 py-0.5 rounded';
+    }
+    if (dot) {
+      dot.className = 'w-2 h-2 rounded-full bg-secondary';
+    }
+    btn.textContent = 'Asignar Ahora';
+    btn.className = 'text-primary hover:underline font-label-sm text-label-sm font-semibold';
+    btn.setAttribute('onclick', `asignarEspacio(this, '${espacio}')`);
+    mostrarToast(`Recinto ${espacio} marcado como LIBRE en telemetría SIBI.`, 'check_circle');
+  }
+
+  function asignarEspacio(btn, espacio) {
+    const card = btn.closest('.bg-surface-container-low');
+    if (!card) return;
+    const badge = card.querySelector('span.font-label-sm.font-semibold');
+    const dot = card.querySelector('span.rounded-full');
+    if (badge) {
+      badge.textContent = 'Ocupado';
+      badge.className = 'font-label-sm text-label-sm text-tertiary font-semibold bg-tertiary/10 px-1.5 py-0.5 rounded';
+    }
+    if (dot) {
+      dot.className = 'w-2 h-2 rounded-full bg-tertiary';
+    }
+    btn.textContent = 'Liberar Espacio';
+    btn.className = 'text-secondary hover:underline font-label-sm text-label-sm font-semibold';
+    btn.setAttribute('onclick', `liberarEspacio(this, '${espacio}')`);
+    mostrarToast(`Recinto ${espacio} reservado y baliza activada.`, 'key');
+  }
+
+  function bloquearMantenimiento(btn, espacio) {
+    const card = btn.closest('.bg-surface-container-low');
+    if (!card) return;
+    const badge = card.querySelector('span.font-label-sm.font-semibold');
+    const dot = card.querySelector('span.rounded-full');
+    if (badge) {
+      badge.textContent = 'Mantenimiento';
+      badge.className = 'font-label-sm text-label-sm text-outline font-semibold bg-surface-container px-1.5 py-0.5 rounded';
+    }
+    if (dot) {
+      dot.className = 'w-2 h-2 rounded-full bg-outline';
+    }
+    btn.textContent = 'Reactivar';
+    btn.className = 'text-secondary hover:underline font-label-sm text-label-sm font-semibold';
+    btn.setAttribute('onclick', `habilitarEspacio(this, '${espacio}')`);
+    mostrarToast(`Orden de bloqueo preventivo emitida para ${espacio}.`, 'engineering');
+  }
+
+  function habilitarEspacio(btn, espacio) {
+    liberarEspacio(btn, espacio);
+    mostrarToast(`Recinto ${espacio} habilitado tras servicio técnico.`, 'verified');
+  }
+
+  const modal = document.getElementById('modalNuevoPrestamo');
+  const btnAbrirModal = document.getElementById('btnRegistrarPrestamo');
+  const btnCerrarModal = document.getElementById('btnCerrarModal');
+  const btnCancelarModal = document.getElementById('btnCancelarPrestamo');
+
+  if (btnAbrirModal && modal) {
+    btnAbrirModal.addEventListener('click', () => modal.classList.remove('hidden'));
+  }
+  if (btnCerrarModal && modal) {
+    btnCerrarModal.addEventListener('click', () => modal.classList.add('hidden'));
+  }
+  if (btnCancelarModal && modal) {
+    btnCancelarModal.addEventListener('click', () => modal.classList.add('hidden'));
+  }
+
+  function confirmarNuevoPrestamo() {
+    if (modal) modal.classList.add('hidden');
+    mostrarToast('Préstamo formalizado exitosamente. Comprobante digital enviado.', 'done_all');
+  }
+
+  const btnReporte = document.getElementById('btnReportePdf');
+  if (btnReporte) {
+    btnReporte.addEventListener('click', () => {
+      mostrarToast('Generando consolidado PDF de gestión académica SIBI 2024...', 'picture_as_pdf');
+    });
+  }
+
+  const btnCarne = document.getElementById('btnEmitirCarne');
+  if (btnCarne) {
+    btnCarne.addEventListener('click', () => {
+      mostrarToast('Apertura de terminal de captura biométrica y carnización...', 'badge');
+    });
+  }
+
+  const searchInput = document.getElementById('searchPrestamoInput');
+  const searchBtn = document.getElementById('btnEjecutarBusqueda');
+  function filtrarTabla() {
+    const val = (searchInput?.value || '').toLowerCase().trim();
+    const rows = document.querySelectorAll('#prestamosTableBody tr');
+    rows.forEach(r => {
+      const txt = r.textContent.toLowerCase();
+      r.style.display = txt.includes(val) ? '' : 'none';
+    });
+    if (val) {
+      mostrarToast(`Filtrando registros por "${val}"`, 'search');
+    }
+  }
+
+  if (searchBtn) searchBtn.addEventListener('click', filtrarTabla);
+  if (searchInput) {
+    searchInput.addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') filtrarTabla();
+    });
+  }
+</script></main></div></body></html>

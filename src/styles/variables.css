@@ -1,0 +1,40 @@
+:root {
+  --primary: #00346a;
+  --primary-container: #054a91;
+  --primary-light: #a9c7ff;
+
+  --secondary: #006a60;
+  --secondary-container: #86f2e2;
+  --secondary-light: #89f5e5;
+
+  --tertiary: #680c37;
+  --tertiary-container: #86264d;
+
+  --error: #ba1a1a;
+
+  --background: #fbf9fa;
+  --surface: #ffffff;
+
+  --surface-low: #f5f3f4;
+  --surface-container: #efedee;
+  --surface-high: #e9e8e9;
+  --surface-highest: #e3e2e3;
+
+  --text: #1b1c1d;
+  --text-secondary: #424751;
+  --muted: #737782;
+
+  --border: #c2c6d2;
+
+  --shadow-sm:
+    0 1px 8px rgba(0, 0, 0, 0.04);
+
+  --shadow-md:
+    0 8px 24px rgba(0, 0, 0, 0.08);
+
+  --radius: 12px;
+  --radius-sm: 8px;
+
+  --sidebar-width: 288px;
+  --topbar-height: 64px;
+}
