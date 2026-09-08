@@ -1,55 +1,56 @@
+import { NavLink } from "react-router-dom";
+
 const navigationItems = [
-  [
-    "dashboard-general",
-    "space_dashboard",
-    "Dashboard General",
-  ],
+  {
+    path: "/admin",
+    icon: "space_dashboard",
+    label: "Dashboard General",
+  },
 
-  [
-    "gestion-de-prestamos",
-    "assignment_return",
-    "Gestión de Préstamos",
-  ],
+  {
+    path: "/admin/prestamos",
+    icon: "assignment_return",
+    label: "Gestión de Préstamos",
+  },
 
-  [
-    "catalogo-y-recursos",
-    "menu_book",
-    "Catálogo & Recursos",
-  ],
+  {
+    path: "/admin/catalogo",
+    icon: "menu_book",
+    label: "Catálogo & Recursos",
+  },
 
-  [
-    "usuarios-y-carnes",
-    "badge",
-    "Usuarios & Carnés",
-  ],
+  {
+    path: "/admin/usuarios",
+    icon: "badge",
+    label: "Usuarios & Carnés",
+  },
 
-  [
-    "aforo-y-espacios-stem",
-    "meeting_room",
-    "Aforo & Espacios STEM",
-  ],
+  {
+    path: "/admin/aforo-espacios",
+    icon: "meeting_room",
+    label: "Aforo & Espacios STEM",
+  },
 
-  [
-    "mesa-de-tramites",
-    "inbox",
-    "Mesa de Trámites",
-  ],
+  {
+    path: "/admin/mesa-tramites",
+    icon: "inbox",
+    label: "Mesa de Trámites",
+  },
 
-  [
-    "reportes-y-analitica",
-    "query_stats",
-    "Reportes & Analítica",
-  ],
+  {
+    path: "/admin/reportes",
+    icon: "query_stats",
+    label: "Reportes & Analítica",
+  },
 
-  [
-    "configuracion",
-    "settings",
-    "Configuración",
-  ],
+  {
+    path: "/admin/configuracion",
+    icon: "settings",
+    label: "Configuración",
+  },
 ];
 
 export default function NavigationMenu({
-  activeItem,
   onNavigate,
 }) {
   return (
@@ -58,25 +59,26 @@ export default function NavigationMenu({
       aria-label="Navegación principal"
     >
       {navigationItems.map(
-        ([id, icon, label]) => (
-          <button
-            key={id}
-            type="button"
-            className={`nav-item ${
-              activeItem === id
-                ? "active"
-                : ""
-            }`}
-            onClick={() =>
-              onNavigate(id)
+        ({ path, icon, label }) => (
+          <NavLink
+            key={path}
+            to={path}
+            end={path === "/admin"}
+            className={({ isActive }) =>
+              `nav-item ${
+                isActive
+                  ? "active"
+                  : ""
+              }`
             }
+            onClick={onNavigate}
           >
             <span className="material-symbols-outlined">
               {icon}
             </span>
 
             <span>{label}</span>
-          </button>
+          </NavLink>
         )
       )}
     </nav>

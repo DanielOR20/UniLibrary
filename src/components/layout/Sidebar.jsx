@@ -1,7 +1,6 @@
 import NavigationMenu from "./NavigationMenu";
 
 export default function Sidebar({
-  activeItem,
   onNavigate,
   open = false,
 }) {
@@ -38,7 +37,6 @@ export default function Sidebar({
       </div>
 
       <NavigationMenu
-        activeItem={activeItem}
         onNavigate={onNavigate}
       />
 

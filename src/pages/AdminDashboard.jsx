@@ -1,28 +1,12 @@
-import { useState } from "react";
-
-import AdminLayout from "../components/layout/AdminLayout";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 import MetricGrid from "../components/dashboard/MetricGrid";
 import CriticalAlerts from "../components/dashboard/CriticalAlerts";
 import AuditLog from "../components/dashboard/AuditLog";
 
-import LoansSection from "../components/loans/LoansSection";
-import SpacesSection from "../components/spaces/SpacesSection";
-import ProceduresPanel from "../components/procedures/ProceduresPanel";
+import { useDashboard } from "../context/DashboardContext";
 
-import NewLoanModal from "../components/loans/NewLoanModal";
-import Toast from "../components/ui/Toast";
-
-import {
-  DashboardProvider,
-  useDashboard,
-} from "../context/DashboardContext";
-
-function DashboardContent() {
-  const [globalSearch, setGlobalSearch] = useState("");
-
+export default function AdminDashboard() {
   const {
-    setModalOpen,
     showToast,
   } = useDashboard();
 
@@ -41,18 +25,8 @@ function DashboardContent() {
   };
 
   return (
-    <AdminLayout
-      globalSearch={globalSearch}
-      onGlobalSearch={setGlobalSearch}
-      onNotify={() =>
-        showToast(
-          "Tienes 3 notificaciones pendientes.",
-          "notifications"
-        )
-      }
-    >
+    <>
       <DashboardHeader
-        onRegister={() => setModalOpen(true)}
         onIdCard={handleIdCard}
         onReport={handleReport}
       />
@@ -61,31 +35,13 @@ function DashboardContent() {
 
       <div className="dashboard-grid">
         <div className="left-column">
-          <LoansSection />
-
-          <SpacesSection />
+          <CriticalAlerts />
         </div>
 
         <div className="right-column">
-          <ProceduresPanel />
-
-          <CriticalAlerts />
-
           <AuditLog />
         </div>
       </div>
-
-      <NewLoanModal />
-
-      <Toast />
-    </AdminLayout>
-  );
-}
-
-export default function AdminDashboard() {
-  return (
-    <DashboardProvider>
-      <DashboardContent />
-    </DashboardProvider>
+    </>
   );
 }
